@@ -1,3 +1,7 @@
+STD_WR equ 1
+STD_WR_FD equ 1
+
+
 %macro exit 0
   mov rax, 60
   mov rdi, 0
@@ -42,6 +46,6 @@ section .text
     jmp _printInLoop
 
   _printCountEnd:
-    printText 1, 1, rbx
+    printText STD_WR, STD_WR_FD, rbx
     ret
 
